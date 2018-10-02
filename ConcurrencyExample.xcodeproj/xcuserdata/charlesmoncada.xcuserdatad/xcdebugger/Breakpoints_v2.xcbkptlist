@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConcurrencyExample/ViewController.swift"
+            timestampString = "560125550.28318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "privateQueueDownload(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ConcurrencyExample.ViewController.privateQueueDownload(Any) -&gt; ()"
+                  moduleName = "ConcurrencyExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesmoncada/Desktop/ConcurrencyExample/ConcurrencyExample/ViewController.swift"
+                  timestampString = "560122115.599889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "362">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in ConcurrencyExample.ViewController.privateQueueDownload(Any) -&gt; ()"
+                  moduleName = "ConcurrencyExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charlesmoncada/Desktop/ConcurrencyExample/ConcurrencyExample/ViewController.swift"
+                  timestampString = "560122115.6029381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
