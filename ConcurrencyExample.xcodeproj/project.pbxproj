@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A179685B2163F67D00C5664B /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179685A2163F67D00C5664B /* AsyncData.swift */; };
 		A1AD00342162BBBD003F90EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD00332162BBBD003F90EE /* AppDelegate.swift */; };
 		A1AD00362162BBBD003F90EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD00352162BBBD003F90EE /* ViewController.swift */; };
 		A1AD00392162BBBD003F90EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AD00372162BBBD003F90EE /* Main.storyboard */; };
 		A1AD003B2162BBBE003F90EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1AD003A2162BBBE003F90EE /* Assets.xcassets */; };
 		A1AD003E2162BBBE003F90EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AD003C2162BBBE003F90EE /* LaunchScreen.storyboard */; };
 		A1AD00462162D47B003F90EE /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD00452162D47B003F90EE /* ImageFilter.swift */; };
+		A1D847DA2164035100E5526E /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D847D92164035100E5526E /* Async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A179685A2163F67D00C5664B /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		A1AD00302162BBBD003F90EE /* ConcurrencyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AD00332162BBBD003F90EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1AD00352162BBBD003F90EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		A1AD003D2162BBBE003F90EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1AD003F2162BBBE003F90EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1AD00452162D47B003F90EE /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
+		A1D847D92164035100E5526E /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		A1AD00322162BBBD003F90EE /* ConcurrencyExample */ = {
 			isa = PBXGroup;
 			children = (
+				A179685A2163F67D00C5664B /* AsyncData.swift */,
+				A1D847D92164035100E5526E /* Async.swift */,
 				A1AD00332162BBBD003F90EE /* AppDelegate.swift */,
 				A1AD00452162D47B003F90EE /* ImageFilter.swift */,
 				A1AD00352162BBBD003F90EE /* ViewController.swift */,
@@ -140,6 +146,8 @@
 			files = (
 				A1AD00462162D47B003F90EE /* ImageFilter.swift in Sources */,
 				A1AD00362162BBBD003F90EE /* ViewController.swift in Sources */,
+				A179685B2163F67D00C5664B /* AsyncData.swift in Sources */,
+				A1D847DA2164035100E5526E /* Async.swift in Sources */,
 				A1AD00342162BBBD003F90EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

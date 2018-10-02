@@ -30,6 +30,9 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		syncFilterButton.isEnabled = false
+
+		dispatchAsync()
+		dispatchSync()
 	}
 
 	@IBAction func resetImages(_ sender: UIButton) {
@@ -157,12 +160,60 @@ class ViewController: UIViewController {
 
 	}
 
-	
 	@IBAction func asyncDataDownload(_ sender: Any) {
+//		let asyncData1 = AsyncData(
+//			url: URL(string: imageURL01)!,
+//			id: "image01",
+//			defaultData: UIImage(named: "Placeholder")!.pngData()!)
+//		asyncData1.delegate = self
+//		asyncData1.execute()
+
+//		let asyncData1: Async<Data> = Async<Data>(
+//			url: URL(string: imageURL01)!,
+//			id: "image01",
+//			defaultData: UIImage(named: "Placeholder")!.pngData()!)
+//		asyncData1.load { data in
+//			let image = UIImage(data: data)
+//			DispatchQueue.main.async { [weak self] in
+//				self?.image01.image = image
+//			}
+//		}
+
+		let asyncData1: Async<AsyncImage> = Async<AsyncImage>(url: URL(string: imageURL01)!,id: "image01", defaultData: #imageLiteral(resourceName: "Placeholder.png"))
+		asyncData1.load { image in
+			DispatchQueue.main.async { [weak self] in
+				self?.image01.image = image
+			}
+		}
+
 	}
 
+	@IBAction func downloadURLSession(_ sender: Any) {
+
+		let url = URL(string: imageURL01)
+		let session = URLSession.shared
+		let request = URLRequest(url: url!)
+
+		let task = session.dataTask(with: request) { (data, response, error) in
+			guard let data = data else { print("No hay data"); return }
+			let image = UIImage(data: data)
+			DispatchQueue.main.async { [weak self] in
+				self?.image01.image = image
+			}
+		}
+
+		let task2 = session.dataTask(with: url!) { (data, response, error) in
+			guard let data = data else { print("No hay data"); return }
+			let image = UIImage(data: data)
+			DispatchQueue.main.async { [weak self] in
+				self?.image01.image = image
+			}
+		}
+
+		task2.resume()
+//		task.resume()
+	}
 	@IBAction func SyncFilter(_ sender: Any) {
-		print("Deberia aplicar el filtro")
 
 		let sepiaOp1 = SepiaFilterOperation()
 		sepiaOp1.inputImage = self.image01.image
@@ -225,5 +276,54 @@ class ViewController: UIViewController {
 		serialFilterQueue.addOperation(sepiaOp5)
 		serialFilterQueue.addOperation(sepiaOp6)
 	}
+
+	func dispatchAsync() {
+		let serialQueue = DispatchQueue(label: "io.keepcoding.serial")
+		var value = 42
+
+		func changeValue() {
+			sleep(1)
+			value = 0
+		}
+
+		serialQueue.async {
+			changeValue()
+		}
+
+		print("---- Dispatch Async ----")
+		print(value)
+	}
+
+	func dispatchSync() {
+		let serialQueue = DispatchQueue(label: "io.keepcoding.serial")
+		var value = 42
+
+		func changeValue() {
+			sleep(1)
+			value = 0
+		}
+
+		print("---- Dispatch Sync ----")
+
+		serialQueue.sync {
+			changeValue()
+		}
+		print(value)
+	}
 }
 
+extension ViewController: AsyncDataDelegate {
+	func asyncData(_ sender: AsyncData, didEndLoadingFrom url: URL) {
+		let data = sender.data
+		let image = UIImage(data: data)
+
+		switch sender.id {
+		case "image01":
+			DispatchQueue.main.async {
+				self.image01.image = image
+			}
+		default:
+			break
+		}
+	}
+}
