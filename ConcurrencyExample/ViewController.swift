@@ -162,6 +162,68 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func SyncFilter(_ sender: Any) {
+		print("Deberia aplicar el filtro")
+
+		let sepiaOp1 = SepiaFilterOperation()
+		sepiaOp1.inputImage = self.image01.image
+		let sepiaOp2 = SepiaFilterOperation()
+		sepiaOp2.inputImage = self.image02.image
+		let sepiaOp3 = SepiaFilterOperation()
+		sepiaOp3.inputImage = self.image03.image
+		let sepiaOp4 = SepiaFilterOperation()
+		sepiaOp4.inputImage = self.image04.image
+		let sepiaOp5 = SepiaFilterOperation()
+		sepiaOp5.inputImage = self.image05.image
+		let sepiaOp6 = SepiaFilterOperation()
+		sepiaOp6.inputImage = self.image06.image
+
+		let serialFilterQueue = OperationQueue()
+		serialFilterQueue.maxConcurrentOperationCount = 1
+
+		sepiaOp1.completionBlock = { [weak self] in
+			guard let output = sepiaOp1.outputImage else { return }
+			DispatchQueue.main.async(execute: {
+				self?.image01.image = output
+			})
+		}
+
+		sepiaOp2.completionBlock = { [weak self] in
+			guard let output = sepiaOp2.outputImage else { return }
+			DispatchQueue.main.async {
+				self?.image02.image = output
+			}
+		}
+		sepiaOp3.completionBlock = { [weak self] in
+			guard let output = sepiaOp3.outputImage else { return }
+			DispatchQueue.main.async {
+				self?.image03.image = output
+			}
+		}
+		sepiaOp4.completionBlock = { [weak self] in
+			guard let output = sepiaOp4.outputImage else { return }
+			DispatchQueue.main.async {
+				self?.image04.image = output
+			}
+		}
+		sepiaOp5.completionBlock = { [weak self] in
+			guard let output = sepiaOp5.outputImage else { return }
+			DispatchQueue.main.async {
+				self?.image05.image = output
+			}
+		}
+		sepiaOp6.completionBlock = { [weak self] in
+			guard let output = sepiaOp6.outputImage else { return }
+			DispatchQueue.main.async {
+				self?.image06.image = output
+			}
+		}
+
+		serialFilterQueue.addOperation(sepiaOp1)
+		serialFilterQueue.addOperation(sepiaOp2)
+		serialFilterQueue.addOperation(sepiaOp3)
+		serialFilterQueue.addOperation(sepiaOp4)
+		serialFilterQueue.addOperation(sepiaOp5)
+		serialFilterQueue.addOperation(sepiaOp6)
 	}
 }
 
