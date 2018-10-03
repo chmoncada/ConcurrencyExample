@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1252A1757ABF90B2688137D3 /* Pods_ConcurrencyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC86DEDFB626179EAE5B06 /* Pods_ConcurrencyExample.framework */; };
 		A179685B2163F67D00C5664B /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179685A2163F67D00C5664B /* AsyncData.swift */; };
 		A1AD00342162BBBD003F90EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD00332162BBBD003F90EE /* AppDelegate.swift */; };
 		A1AD00362162BBBD003F90EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD00352162BBBD003F90EE /* ViewController.swift */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F31A064D155C6330F97A1B0 /* Pods-ConcurrencyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcurrencyExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConcurrencyExample/Pods-ConcurrencyExample.debug.xcconfig"; sourceTree = "<group>"; };
+		52AC86DEDFB626179EAE5B06 /* Pods_ConcurrencyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConcurrencyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A179685A2163F67D00C5664B /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		A1AD00302162BBBD003F90EE /* ConcurrencyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AD00332162BBBD003F90EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		A1AD003F2162BBBE003F90EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1AD00452162D47B003F90EE /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
 		A1D847D92164035100E5526E /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		E07C250B7113DAF08D2EAD7C /* Pods-ConcurrencyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcurrencyExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConcurrencyExample/Pods-ConcurrencyExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1252A1757ABF90B2688137D3 /* Pods_ConcurrencyExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31D3EAED9E0376402E6037B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52AC86DEDFB626179EAE5B06 /* Pods_ConcurrencyExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A1AD00272162BBBD003F90EE = {
 			isa = PBXGroup;
 			children = (
 				A1AD00322162BBBD003F90EE /* ConcurrencyExample */,
 				A1AD00312162BBBD003F90EE /* Products */,
+				EBC1C3BD8B4090FCB60B3DCC /* Pods */,
+				31D3EAED9E0376402E6037B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +88,15 @@
 			path = ConcurrencyExample;
 			sourceTree = "<group>";
 		};
+		EBC1C3BD8B4090FCB60B3DCC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F31A064D155C6330F97A1B0 /* Pods-ConcurrencyExample.debug.xcconfig */,
+				E07C250B7113DAF08D2EAD7C /* Pods-ConcurrencyExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1AD00422162BBBE003F90EE /* Build configuration list for PBXNativeTarget "ConcurrencyExample" */;
 			buildPhases = (
+				01C7489B36B5961B5496AF58 /* [CP] Check Pods Manifest.lock */,
 				A1AD002C2162BBBD003F90EE /* Sources */,
 				A1AD002D2162BBBD003F90EE /* Frameworks */,
 				A1AD002E2162BBBD003F90EE /* Resources */,
+				C4435AB0938A4050DA392BB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +164,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01C7489B36B5961B5496AF58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConcurrencyExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4435AB0938A4050DA392BB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ConcurrencyExample/Pods-ConcurrencyExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConcurrencyExample/Pods-ConcurrencyExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1AD002C2162BBBD003F90EE /* Sources */ = {
@@ -292,6 +357,7 @@
 		};
 		A1AD00432162BBBE003F90EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F31A064D155C6330F97A1B0 /* Pods-ConcurrencyExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +376,7 @@
 		};
 		A1AD00442162BBBE003F90EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07C250B7113DAF08D2EAD7C /* Pods-ConcurrencyExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

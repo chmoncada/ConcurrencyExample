@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 let imageURL01 = "https://image.tmdb.org/t/p/original/cezWGskPY5x7GaglTTRN4Fugfb8.jpg"
 let imageURL02 = "https://image.tmdb.org/t/p/original/t90Y3G8UGQp0f0DrP60wRu9gfrH.jpg"
@@ -310,6 +311,10 @@ class ViewController: UIViewController {
 		}
 		print(value)
 	}
+	@IBAction func downloadAlamo(_ sender: Any) {
+		let url1 = URL(string: imageURL01)!
+		self.image01.setImage(with: url1)
+	}
 }
 
 extension ViewController: AsyncDataDelegate {
@@ -327,3 +332,16 @@ extension ViewController: AsyncDataDelegate {
 		}
 	}
 }
+
+private extension UIImageView {
+	func setImage(with url: URL) {
+		Alamofire.request(url)
+			.responseData { (response) in
+			let image = UIImage(data: response.data!)
+			DispatchQueue.main.async {
+				self.image = image
+			}
+		}
+	}
+}
+
